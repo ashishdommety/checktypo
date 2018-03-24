@@ -10,9 +10,12 @@ nightmare
   .goto("https://extension.berkeley.edu/international/programs/legal-studies/")
   .evaluate(() => document.querySelector("body").innerText.split(" "))
   .end()
-  .then((result) => {
+  .then(function(result){
     /* use this part to push typos into an array and return that array*/
     let typos = [];
     result.map((word) => dictionary.check(word) ? word : typos.push(word) );
-    typos.length;
+    console.log(typos);
+    /* Some tasks:
+        - use regex to remove /n, commas etc for higher accuracy  
+     */
   })
