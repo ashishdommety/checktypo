@@ -1,0 +1,23 @@
+{
+  "name": "checktypo",
+  "version": "1.0.0",
+  "description": "A package to check for typos on your website!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashishdommety/checktypo.git"
+  },
+  "author": "Ashish Dommety",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashishdommety/checktypo/issues"
+  },
+  "homepage": "https://github.com/ashishdommety/checktypo#readme",
+  "dependencies": {
+    "nightmare": "^3.0.0",
+    "typo-js": "^1.0.3"
+  }
+}
