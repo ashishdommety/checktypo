@@ -8,13 +8,11 @@ let array_of_suggestions = dictionary.suggest("helo");
 
 nightmare
   .goto("https://extension.berkeley.edu/international/programs/legal-studies/")
-  .evaluate(function(){
-    let content = document.querySelector("body").innerText;
-    return content.split(" ");
-  })
+  .evaluate(() => document.querySelector("body").innerText.split(" "))
   .end()
-  .then(function(result){
-    console.log(result);
+  .then((result) => {
+    /* use this part to push typos into an array and return that array*/
+    let typos = [];
+    result.map((word) => dictionary.check(word) ? word : typos.push(word) );
+    typos.length;
   })
-// console.log(is_spelled_correctly);
-// console.log(array_of_suggestions);
