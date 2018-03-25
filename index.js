@@ -21,17 +21,23 @@ nightmare
       dictionary.check(cleanWord) ? cleanWord : typos.push(cleanWord);
     })
 
-    // log out typos
-    console.log(typos);
-  
-
+    console.log(typos); // log out words without ,.:\n\t
+    
+    // seperate words with white spaces
+    let newWords = [];
+    
     for(let i=0; i < typos.length; i++){
       if(/\s/g.test(typos[i])){  // look for white spaces in string
         let tempSet = typos[i].split(" ");  // if they exist, split the string again
-
+        for(let j=0; j < tempSet.length; j++){
+          newWords.push(tempSet[j]);
+        }
         /* re-check for typos after and push any into new array */
-
-        
       }
     }
+
+    console.log(newWords); // log out broken 
+
+    //clean up empty strings
+    
   })
