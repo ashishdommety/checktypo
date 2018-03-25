@@ -39,20 +39,41 @@ nightmare
     console.log("Without white spaces: \n");
     console.log(newWords); // log out broken 
     console.log("-------------------------------------------------------");
+
     //clean up empty strings
-    // let finalTypos = newWords.map((word) => word.length !== 0 ? word : '');
-    let finalTypos = [];
+    let nonEmpty = [];
     for(let k=0; k < newWords.length; k++){
       if(newWords[k].length !== 0){
-        finalTypos.push(newWords[k]);
+        nonEmpty.push(newWords[k]);
       }
     }
 
     console.log("Without empty strings: \n");
-    console.log(finalTypos);
+    console.log(nonEmpty);
     console.log("-------------------------------------------------------");
 
-    
+    // final spellcheck?
+    let finalTypos = [];
+    for(let a=0; a < nonEmpty.length; a++){
+      if(!dictionary.check(nonEmpty[a])){
+        let tempObj = {
+          "word": nonEmpty[a],
+          "length": nonEmpty[a].length,
+          "dict check": dictionary.check(nonEmpty[a])
+        }
+        finalTypos.push(tempObj);
+      }
+    }
     console.log("Final SpellCheck: \n");
-    console.log()
+    console.log(finalTypos);
+
+    /* 
+      Next Steps?
+      clean-up ')' and '?'
+      add education abbreviations (iBT, TOEIC, or TOEFL)
+      ignore emails with '@'
+      ignore numbers
+      ignore social media tags
+      split words with '-' and check again
+    */
   })
