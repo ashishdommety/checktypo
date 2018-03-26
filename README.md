@@ -1,5 +1,6 @@
-# CheckTypo
-Search for Typos on your website
+# CheckTypo :book:
+Search through your web content for any typos that were overlooked
 
 
-## Some Issues:
+Built with: Nightmare.js + typo-js
+
