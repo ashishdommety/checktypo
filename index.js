@@ -15,13 +15,13 @@ nightmare
     /* use this part to push typos into an array and return that array*/
     let typos = [];
     
-    // clean word up (remove ,.:\n\t)
+    // clean word up (remove ,.:\n\t)(
     result.map((word) => {
-      let cleanWord = word.replace(/[,.:\n\t]/g," ");
+      let cleanWord = word.replace(/[,.:\n\t)(?]/g," ");
       dictionary.check(cleanWord) ? cleanWord : typos.push(cleanWord);
     })
     console.log("Without ,.:\\n\\t:" + "\n");
-    console.log(typos); // log out words without ,.:\n\t
+    console.log(typos); // log out words without ,.:\n\t)?
     console.log("-------------------------------------------------------");
     // seperate words with white spaces
     let newWords = [];
@@ -56,20 +56,26 @@ nightmare
     let finalTypos = [];
     for(let a=0; a < nonEmpty.length; a++){
       if(!dictionary.check(nonEmpty[a])){
-        let tempObj = {
-          "word": nonEmpty[a],
-          "length": nonEmpty[a].length,
-          "dict check": dictionary.check(nonEmpty[a])
-        }
-        finalTypos.push(tempObj);
+        finalTypos.push(nonEmpty[a]);
       }
     }
     console.log("Final SpellCheck: \n");
     console.log(finalTypos);
+    console.log("-------------------------------------------------------");
 
+    let noNumbers = [];
+
+    for(let b=0; b < finalTypos.length; b++){
+      if(isNaN(finalTypos[b])){
+        noNumbers.push(finalTypos[b]);
+      }
+    }
+    
+    console.log("Without Numbers: \n");
+    console.log(noNumbers);
+    console.log("-------------------------------------------------------");
     /* 
       Next Steps?
-      clean-up ')' and '?'
       add education abbreviations (iBT, TOEIC, or TOEFL)
       ignore emails with '@'
       ignore numbers
