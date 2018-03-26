@@ -94,6 +94,7 @@ nightmare
     console.log(noEmails);
     console.log("-------------------------------------------------------");
 
+    //NOTE: Remove custom arguments
     let withoutPermitted = function(){
       let filteredArr = [];
       let argumentsArr = [];
@@ -120,7 +121,6 @@ nightmare
 
     /* 
       To-dos?
-      add custom elements to ignore
       ignore social media tags
     */
 
