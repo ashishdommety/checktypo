@@ -3,10 +3,6 @@ const dictionary = new Typo('en_US');
 const Nightmare = require("nightmare");
 const nightmare = Nightmare({show:false});
 
-let is_spelled_correctly = dictionary.check("hello");
-let array_of_suggestions = dictionary.suggest("helo");
-console.log(dictionary.check("Facebook"));
-
 nightmare
   .goto("https://extension.berkeley.edu/international/programs/legal-studies/")
   .evaluate(() => document.querySelector("body").innerText.split(" "))
@@ -126,7 +122,7 @@ nightmare
 
     /* 
       Ideas to re-factor?
-      Split each filter level into functions
+      Split each filter level into functions (7 levels of filtration)
       Unit test them
       Add a .json/.config file that consists of the url to check, some permitted typos (function to be created for this),
     */
