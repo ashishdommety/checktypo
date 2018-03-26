@@ -81,6 +81,7 @@ nightmare
     console.log(noNumbers);
     console.log("-------------------------------------------------------");
 
+    // NOTE - filter out emails function
     let noEmails = [];
 
     for(let d=0; d < noNumbers.length; d++){
@@ -92,12 +93,41 @@ nightmare
     console.log("Without Emails: \n");
     console.log(noEmails);
     console.log("-------------------------------------------------------");
+
+    let withoutPermitted = function(){
+      let filteredArr = [];
+      let argumentsArr = [];
+
+      // copy arguments obj to array
+      for(let k=0; k < arguments.length; k++){
+        argumentsArr.push(arguments[k]);
+      }
+
+      // loop through noEmail array
+      for(let j=0; j < noEmails.length; j++){ 
+        /* If noEmail array element doesn't exist in argument array, push to filtered array */
+        if(!argumentsArr.includes(noEmails[j])){
+          filteredArr.push(noEmails[j]);
+        }
+      }
+
+      return filteredArr;
+    }
+
+    console.log("Without Elements: \n");
+    console.log(withoutPermitted('iBT','BGA','TOEIC','IELTS'));
+    console.log("-------------------------------------------------------");
+
     /* 
-      Next Steps?
-      add education abbreviations (iBT, TOEIC, or TOEFL)
-      ignore emails with '@'
-      ignore numbers - done
+      To-dos?
+      add custom elements to ignore
       ignore social media tags
-      split words with '-' and check again
+    */
+
+    /* 
+      Ideas to re-factor?
+      Split each filter level into functions
+      Unit test them
+      Add a .json/.config file that consists of the url to check, some permitted typos (function to be created for this),
     */
   })
