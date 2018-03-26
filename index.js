@@ -115,15 +115,13 @@ nightmare
     console.log(withoutPermitted('iBT','BGA','TOEIC','IELTS'));
     console.log("-------------------------------------------------------");
 
-    /* 
-      To-dos?
-      ignore social media tags
-    */
 
     /* 
-      Ideas to re-factor?
+     ~~~ Ideas: ~~~
       Split each filter level into functions (7 levels of filtration)
       Unit test them
-      Add a .json/.config file that consists of the url to check, some permitted typos (function to be created for this),
+      Add a .json/.config file that consists of the url to check & some permitted typos
+      Take the remaining array of typos and locate them on the page
+      Make node spin out a local html that mimicks the url source but changes the color of the typos to red, while also listing all the typos on the top of the html
     */
   })
