@@ -5,7 +5,7 @@ const nightmare = Nightmare({show:false});
 
 let is_spelled_correctly = dictionary.check("hello");
 let array_of_suggestions = dictionary.suggest("helo");
-console.log(dictionary.check("RIGHTS"));
+console.log(dictionary.check("Immersive"));
 
 nightmare
   .goto("https://extension.berkeley.edu/international/programs/legal-studies/")
@@ -17,7 +17,7 @@ nightmare
     
     // clean word up (remove ,.:\n\t)(
     result.map((word) => {
-      let cleanWord = word.replace(/[,.:\n\t)(?]/g," ");
+      let cleanWord = word.replace(/[,.:\n\t)(?*$-]/g," ");
       dictionary.check(cleanWord) ? cleanWord : typos.push(cleanWord);
     })
     console.log("Without ,.:\\n\\t:" + "\n");
@@ -78,7 +78,7 @@ nightmare
       Next Steps?
       add education abbreviations (iBT, TOEIC, or TOEFL)
       ignore emails with '@'
-      ignore numbers
+      ignore numbers - done
       ignore social media tags
       split words with '-' and check again
     */
