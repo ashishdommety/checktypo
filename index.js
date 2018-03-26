@@ -1,5 +1,3 @@
-import { notEqual } from "assert";
-
 const Typo = require("typo-js");
 const dictionary = new Typo('en_US');
 const Nightmare = require("nightmare");
@@ -7,7 +5,7 @@ const nightmare = Nightmare({show:false});
 
 let is_spelled_correctly = dictionary.check("hello");
 let array_of_suggestions = dictionary.suggest("helo");
-console.log(dictionary.check("Immersive"));
+console.log(dictionary.check("Facebook"));
 
 nightmare
   .goto("https://extension.berkeley.edu/international/programs/legal-studies/")
@@ -83,7 +81,17 @@ nightmare
     console.log(noNumbers);
     console.log("-------------------------------------------------------");
 
+    let noEmails = [];
 
+    for(let d=0; d < noNumbers.length; d++){
+      if(!noNumbers[d].split("").includes("@")){
+        noEmails.push(noNumbers[d]);
+      }
+    }
+
+    console.log("Without Emails: \n");
+    console.log(noEmails);
+    console.log("-------------------------------------------------------");
     /* 
       Next Steps?
       add education abbreviations (iBT, TOEIC, or TOEFL)
