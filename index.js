@@ -1,3 +1,5 @@
+import { notEqual } from "assert";
+
 const Typo = require("typo-js");
 const dictionary = new Typo('en_US');
 const Nightmare = require("nightmare");
@@ -12,9 +14,11 @@ nightmare
   .evaluate(() => document.querySelector("body").innerText.split(" "))
   .end()
   .then(function(result){
+    
     /* use this part to push typos into an array and return that array*/
     let typos = [];
     
+    // NOTE - clean up symbols function
     // clean word up (remove ,.:\n\t)(
     result.map((word) => {
       let cleanWord = word.replace(/[,.:\n\t)(?*$-]/g," ");
@@ -23,6 +27,8 @@ nightmare
     console.log("Without ,.:\\n\\t:" + "\n");
     console.log(typos); // log out words without ,.:\n\t)?
     console.log("-------------------------------------------------------");
+
+    // NOTE - clean up white spaces function
     // seperate words with white spaces
     let newWords = [];
     
@@ -40,6 +46,7 @@ nightmare
     console.log(newWords); // log out broken 
     console.log("-------------------------------------------------------");
 
+    // NOTE - clean up empty strings function
     //clean up empty strings
     let nonEmpty = [];
     for(let k=0; k < newWords.length; k++){
@@ -52,7 +59,7 @@ nightmare
     console.log(nonEmpty);
     console.log("-------------------------------------------------------");
 
-    // final spellcheck?
+    // NOTE - Final Spellcheck
     let finalTypos = [];
     for(let a=0; a < nonEmpty.length; a++){
       if(!dictionary.check(nonEmpty[a])){
@@ -63,6 +70,7 @@ nightmare
     console.log(finalTypos);
     console.log("-------------------------------------------------------");
 
+    // NOTE - filter out numbers function
     let noNumbers = [];
 
     for(let b=0; b < finalTypos.length; b++){
@@ -74,6 +82,8 @@ nightmare
     console.log("Without Numbers: \n");
     console.log(noNumbers);
     console.log("-------------------------------------------------------");
+
+
     /* 
       Next Steps?
       add education abbreviations (iBT, TOEIC, or TOEFL)
