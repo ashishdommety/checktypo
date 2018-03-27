@@ -1,5 +1,5 @@
 
-export default function cleanCustomArgs(){
+export default function cleanCustomArgs(arr){
     let filteredArr = [];
     let argumentsArr = [];
 
@@ -9,10 +9,10 @@ export default function cleanCustomArgs(){
     }
 
     // loop through noEmail array
-    for(let j=0; j < noEmails.length; j++){ 
+    for(let j=0; j < arr.length; j++){ 
       /* If noEmail array element doesn't exist in argument array, push to filtered array */
-      if(!argumentsArr.includes(noEmails[j])){
-        filteredArr.push(noEmails[j]);
+      if(!argumentsArr.includes(arr[j])){
+        filteredArr.push(arr[j]);
       }
     }
 

@@ -1,10 +1,10 @@
 /* Function to remove empty strings */
 
-export default function cleanEmptyStrings(){
+export default function cleanEmptyStrings(arr){
     let nonEmpty = [];
-    for(let k=0; k < newWords.length; k++){
-      if(newWords[k].length !== 0){
-        nonEmpty.push(newWords[k]);
+    for(let k=0; k < arr.length; k++){
+      if(arr[k].length !== 0){
+        nonEmpty.push(arr[k]);
       }
     }
 

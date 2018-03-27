@@ -1,11 +1,11 @@
 /* Function to clean out numbers */
 
-export default function cleanNumbers(){
+export default function cleanNumbers(arr){
     let noNumbers = [];
 
-    for(let b=0; b < finalTypos.length; b++){
-      if(isNaN(finalTypos[b])){
-        noNumbers.push(finalTypos[b]);
+    for(let b=0; b < arr.length; b++){
+      if(isNaN(arr[b])){
+        noNumbers.push(arr[b]);
       }
     }    
 

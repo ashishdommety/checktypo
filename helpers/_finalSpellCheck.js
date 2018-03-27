@@ -1,9 +1,9 @@
 /* Function to conduct a final spellcheck */
-export default function finalSpellCheck(){
+export default function finalSpellCheck(arr){
     let finalTypos = [];
-    for(let a=0; a < nonEmpty.length; a++){
-        if(!dictionary.check(nonEmpty[a])){
-            finalTypos.push(nonEmpty[a]);
+    for(let a=0; a < arr.length; a++){
+        if(!dictionary.check(arr[a])){
+            finalTypos.push(arr[a]);
         }
     }
     return finalTypos;
