@@ -1,3 +1,4 @@
+/* Function to clean custom arguments */
 
 export default function cleanCustomArgs(arr){
     let filteredArr = [];
