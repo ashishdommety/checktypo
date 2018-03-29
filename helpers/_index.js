@@ -17,10 +17,18 @@ const cleanSymbols = require("./_cleanEmails"),
       cleanEmails = require("./_cleanEmails"),
       cleanCustomArgs = require("./_cleanCustomArgs");
 
-console.log(cleanSymbols);
-console.log(cleanSpaces);
-console.log(cleanEmptyStrings);
-console.log(finalSpellCheck);
-console.log(cleanNumbers);
-console.log(cleanEmails);
-console.log(cleanCustomArgs);
+module.exports = function checktypos(contentArray){
+    cleanCustomArgs(
+        cleanEmails(
+            cleanNumber(
+                finalSpellCheck(
+                    cleanEmptyStrings(
+                        cleanSpaces(
+                            cleanSymbols(contentArray)
+                        )
+                    )
+                )
+            )
+        )
+    )
+}
