@@ -1,7 +1,6 @@
 /* Function to clean custom arguments */
 
-export default function cleanCustomArgs(arr){
-  let arr = arr;
+module.exports = function cleanCustomArgs(arr){
   
     return function customArgs(){
       let filteredArr = [];

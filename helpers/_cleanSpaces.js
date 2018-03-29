@@ -1,6 +1,6 @@
 /* Function to clean up white spaces */
 
-export default function cleanSpaces(arr){
+module.exports = function cleanSpaces(arr){
     let newWords = [];
     
     for(let i=0; i < arr.length; i++){
