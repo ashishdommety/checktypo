@@ -17,7 +17,7 @@ const cleanSymbols = require("./_cleanEmails"),
       cleanEmails = require("./_cleanEmails"),
       cleanCustomArgs = require("./_cleanCustomArgs");
 
-module.exports = function checktypos(contentArray){
+module.exports = function (contentArray){
     cleanCustomArgs(
         cleanEmails(
             cleanNumber(
