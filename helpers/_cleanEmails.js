@@ -8,5 +8,6 @@ module.exports = function cleanEmails(arr){
         noEmails.push(arr[d]);
       }
     }
+    console.log("----------------------- noEmails: " + noEmails);
     return noEmails;
 }

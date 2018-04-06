@@ -9,5 +9,6 @@ module.exports = function cleanSymbols(arr){
         let cleanWord = word.replace(/[,.:\n\t)(?*$-]/g," ");
         dictionary.check(cleanWord) ? cleanWord : typos.push(cleanWord);
     })
+    console.log("----------------------- typos: " + typos);
     return typos;
 }

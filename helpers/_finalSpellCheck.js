@@ -1,3 +1,6 @@
+const Typo = require("typo-js");
+const dictionary = new Typo('en_US');
+
 /* Function to conduct a final spellcheck */
 module.exports = function finalSpellCheck(arr){
     let finalTypos = [];
@@ -6,6 +9,7 @@ module.exports = function finalSpellCheck(arr){
             finalTypos.push(arr[a]);
         }
     }
+    console.log("----------------------- finalTypos: " + finalTypos);
     return finalTypos;
 }
 

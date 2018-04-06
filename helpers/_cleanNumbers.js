@@ -8,6 +8,6 @@ module.exports = function cleanNumbers(arr){
         noNumbers.push(arr[b]);
       }
     }    
-
+    console.log("----------------------- noNumbers: " + noNumbers);
     return noNumbers;
 }

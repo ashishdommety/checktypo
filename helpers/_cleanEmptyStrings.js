@@ -7,6 +7,6 @@ module.exports = function cleanEmptyStrings(arr){
         nonEmpty.push(arr[k]);
       }
     }
-
+    console.log("----------------------- nonEmpty: " + nonEmpty);
     return nonEmpty;
 }

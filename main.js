@@ -3,14 +3,18 @@ const dictionary = new Typo('en_US');
 const Nightmare = require("nightmare");
 const nightmare = Nightmare({show:false});
 const checkTypo = require("./helpers/_index");
-console.log("checkTypo: " + checkTypo);
-
+// console.log("checkTypo: " + checkTypo);
+console.log("running...");
 nightmare
   .goto("https://extension.berkeley.edu/international/programs/legal-studies/")
   .evaluate(() => document.querySelector("body").innerText.split(" "))
   .end()
   .then(function(result){
-    checkTypo(result);
+      console.log(checkTypo(result));
+      console.log("..................................done");
+      console.log("result an array?: " + Array.isArray(result));
+
+    /* OLD CODE BEFORE ISOLATION */
     // /* use this part to push typos into an array and return that array*/
     // let typos = [];
     
