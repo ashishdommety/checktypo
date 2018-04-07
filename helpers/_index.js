@@ -1,12 +1,13 @@
 /* 
-    Current order of function calls
-    - clean typos
+Current order of function calls
+- first spell check
+    - clean symbols
         - clean white spaces
             - clean empty strings
-                    - filter out numbers
-                        - filter out emails
-                            - final spellcheck 
-                                - remove custom arguments
+                - filter out numbers
+                    - filter out emails
+                        - final spellcheck 
+                            - remove custom arguments
 */
 
 const cleanSymbols = require("./_cleanSymbols"),
