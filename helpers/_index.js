@@ -1,5 +1,5 @@
 /* 
-Current order of function calls
+Order of function calls
 - first spell check
     - clean symbols
         - clean white spaces
@@ -13,17 +13,17 @@ Current order of function calls
 const cleanSymbols = require("./_cleanSymbols"),
       cleanSpaces = require("./_cleanSpaces"),
       cleanEmptyStrings = require("./_cleanEmptyStrings"),
-      finalSpellCheck = require("./_finalSpellCheck"),
+      spellCheck = require("./_spellCheck"),
       cleanNumbers = require("./_cleanNumbers"),
       cleanEmails = require("./_cleanEmails"),
       cleanCustomArgs = require("./_cleanCustomArgs");
 
 module.exports = function (contentArray){
-    
+        // change arrangment to reflect correct arrangement
         let noSymbols = cleanSymbols(contentArray);
         let noSpaces = cleanSpaces(noSymbols);
         let noEmpty = cleanEmptyStrings(noSpaces);
-        let finalCheck = finalSpellCheck(noEmpty);
+        let spellCheck = finalSpellCheck(noEmpty);
         let noNums = cleanNumbers(finalCheck);
         let noMails = cleanEmails(noNums);
         
