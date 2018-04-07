@@ -9,7 +9,7 @@
                             - remove custom arguments
 */
 
-const cleanSymbols = require("./_cleanEmails"),
+const cleanSymbols = require("./_cleanSymbols"),
       cleanSpaces = require("./_cleanSpaces"),
       cleanEmptyStrings = require("./_cleanEmptyStrings"),
       finalSpellCheck = require("./_finalSpellCheck"),
@@ -18,25 +18,15 @@ const cleanSymbols = require("./_cleanEmails"),
       cleanCustomArgs = require("./_cleanCustomArgs");
 
 module.exports = function (contentArray){
-    // cleanCustomArgs(
+    
         let noSymbols = cleanSymbols(contentArray);
         let noSpaces = cleanSpaces(noSymbols);
         let noEmpty = cleanEmptyStrings(noSpaces);
         let finalCheck = finalSpellCheck(noEmpty);
         let noNums = cleanNumbers(finalCheck);
         let noMails = cleanEmails(noNums);
-
+        
+        // add conditional to clean custom args if prescribed, or just go ahead and filter.
+        
         return noMails;
-        // cleanEmails(
-        //     cleanNumbers(
-        //         finalSpellCheck(
-        //             cleanEmptyStrings(
-        //                 cleanSpaces(
-        //                     cleanSymbols(contentArray)
-        //                 )
-        //             )
-        //         )
-        //     )
-        // )
-    // )
 }
