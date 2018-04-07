@@ -16,7 +16,10 @@ describe("Clean Symbols Test:", function(){
   it("Doesnt remove any letters or numbers from array", function(){
     cleanSymbols(['qdab123']).should.deep.equal(['qdab123']);
   })
-  it("Creates empty array when only symbols exist", function(){
-    cleanSymbols(['*&_)(']).should.deep.equal([]);
+  it("Creates spaced array when only symbols exist", function(){
+    cleanSymbols(['?.>,/.,hello']).should.deep.equal(['       hello']);
+  })
+  it("Should check if array remains unaffected", function(){
+    cleanSymbols(['?.>,/.,hello']).should.not.deep.equal(['?.>,/.,hello']);
   })
 })
