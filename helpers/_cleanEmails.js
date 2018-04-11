@@ -1,13 +1,7 @@
 /* Function to clean out emails */
 
 module.exports = function cleanEmails(arr){
-    let noEmails = [];
-
-    for(let d=0; d < arr.length; d++){
-      if(!arr[d].split("").includes("@")){
-        noEmails.push(arr[d]);
-      }
-    }
-    console.log("----------------------- noEmails: " + noEmails);
-    return noEmails;
+    let noEmails = []; // stores non-email strings 
+    arr.map((x) => x.split("").includes("@") ? '' : noEmails.push(x)); // splits string and check if the result array has an "@" character. If it doesn't, then it isn't an email. Push it to noEmails.
+    return noEmails; 
 }
