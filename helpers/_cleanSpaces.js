@@ -1,17 +1,10 @@
 /* Function to clean up white spaces */
 
 module.exports = function cleanSpaces(arr){
-    let newWords = [];
-    
-    for(let i=0; i < arr.length; i++){
-      if(/\s/g.test(arr[i])){  // look for white spaces in string
-        let tempSet = arr[i].split(" ");  // if they exist, split the string again
-        for(let j=0; j < tempSet.length; j++){
-          newWords.push(tempSet[j]);
-        }
-      }
-    }
-    // console.log("----------------------- newWords: " + newWords);
-    return newWords;
+    let splitWords = []; // holds two words
+    let noSpaces = []; // holds all elements with no spaces 
+    arr.map((x) => /\s/g.test(x) ? x.split(" ").map((y) => splitWords.push(y)) : noSpaces.push(x)); // looks for spaces. If they exist, split the word and push each of them into noSpaces. If they dont, push them into noSpaces.
+    splitWords.map((x) => x.length ? noSpaces.push(x) : ''); // check if any empty strings got pushed in
+    return noSpaces; // return noSpaces
 }
     
