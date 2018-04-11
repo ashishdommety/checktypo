@@ -2,8 +2,7 @@
 Order of function calls
 - first spell check
     - clean symbols
-        - clean white spaces
-            - clean empty strings
+        - clean white spaces (cleans empty strings also)
                 - filter out numbers
                     - filter out emails
                         - final spellcheck 
