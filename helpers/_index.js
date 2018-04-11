@@ -1,6 +1,5 @@
 /* 
 Order of function calls
-- first spell check
     - clean symbols
         - clean white spaces (cleans empty strings also)
                 - filter out numbers
@@ -17,14 +16,13 @@ const cleanSymbols = require("./_cleanSymbols"),
       cleanCustomArgs = require("./_cleanCustomArgs");
 
 module.exports = function (contentArray){
-        // change arrangment to reflect correct arrangement
         let noSymbols = cleanSymbols(contentArray);
         let noSpaces = cleanSpaces(noSymbols);
-        let spellCheck = finalSpellCheck(noSpaces);
-        let noNums = cleanNumbers(finalCheck);
+        let noNums = cleanNumbers(noSpaces);
         let noMails = cleanEmails(noNums);
+        let noTypos = spellCheck(noMails);
         
         // add conditional to clean custom args if prescribed, or just go ahead and filter.
         
-        return noMails;
+        return noTypos;
 }

@@ -10,6 +10,6 @@ nightmare
   .evaluate(() => document.querySelector("body").innerText.split(" "))
   .end()
   .then(function(result){
-      console.log(result);
-      // console.log(checkTypo(result));
+      // console.log(result);
+      console.log(checkTypo(result));
   })
