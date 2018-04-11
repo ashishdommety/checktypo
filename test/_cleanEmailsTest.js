@@ -15,4 +15,4 @@ describe("Clean Emails: ", function(){
     it("Should check if array remains unaffected", function(){
       cleanEmails(['hello']).should.deep.equal(['hello']);
     })
-  })
+})

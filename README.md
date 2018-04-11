@@ -6,11 +6,11 @@ Built with: Nightmare.js + typo-js
 
 ### To-dos:
 Unit test
-+ _cleanEmails ()
++ _cleanEmails (done)
 + _cleanNumbers (done)
 + _cleanSpaces (done)
 + _cleanSymbols (done)
-+ _spellCheck
++ _spellCheck (done)
 
 Ideas: 
 - Add function to remove duplicates from final result

@@ -3,12 +3,8 @@ const dictionary = new Typo('en_US');
 
 /* Function to conduct a spellcheck */
 module.exports = function spellCheck(arr){
-    let finalTypos = [];
-    for(let a=0; a < arr.length; a++){
-        if(!dictionary.check(arr[a])){
-            finalTypos.push(arr[a]);
-        }
-    }
-    return finalTypos;
+    let finalTypos = []; // holds remaining typos
+    arr.map((x) => dictionary.check(x) ? '' : finalTypos.push(x)); // checks if there is a typo
+    return finalTypos.length ? finalTypos : 'typo free!'; // if there are return them, otherwise return 'typo free!'
 }
 
