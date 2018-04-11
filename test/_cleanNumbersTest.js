@@ -2,7 +2,7 @@ const mocha = require("mocha");
 const chai = require("chai").should();
 const cleanNumbers = require("../helpers/_cleanNumbers");
 
-describe("Clean Numbers", function(){
+describe("Clean Numbers:", function(){
     it("Returns an array", function(){
         cleanNumbers(['1234qda']).should.an('array');
       })
