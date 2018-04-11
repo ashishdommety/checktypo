@@ -11,7 +11,7 @@ module.exports = function cleanSpaces(arr){
         }
       }
     }
-    console.log("----------------------- newWords: " + newWords);
+    // console.log("----------------------- newWords: " + newWords);
     return newWords;
 }
     
