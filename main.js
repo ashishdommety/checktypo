@@ -23,4 +23,3 @@ module.exports = function checktypo(url){
   })
 }
 
-checktypo("https://extension.berkeley.edu/international/programs/legal-studies/");
