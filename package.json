@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A package to check for typos on your website!",
   "main": "main.js",
+  "readme": "README.md",
   "scripts": {
     "test": "mocha"
   },

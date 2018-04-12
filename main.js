@@ -8,7 +8,7 @@ spinner.setSpinnerString('|/-\\');
 const clear = require("clear");
 const checkTypo = require("./helpers/_index");
 
-module.exports = function checktypo(url){
+module.exports = function findTypos(url){
   spinner.start();
   nightmare
   .goto(url)
