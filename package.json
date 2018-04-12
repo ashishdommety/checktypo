@@ -1,6 +1,6 @@
 {
   "name": "checktypo",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A package to check for typos on your website!",
   "main": "main.js",
   "readme": "README.md",
