@@ -2,7 +2,7 @@
   "name": "checktypo",
   "version": "1.0.0",
   "description": "A package to check for typos on your website!",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "mocha"
   },
