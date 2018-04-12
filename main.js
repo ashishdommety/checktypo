@@ -15,7 +15,6 @@ module.exports = function findTypos(url){
   .evaluate(() => document.querySelector("body").innerText.split(" "))
   .end()
   .then(function(result){
-      // console.log(result);
       spinner.stop();
       console.log("\n");
       clear();
