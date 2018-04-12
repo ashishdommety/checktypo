@@ -22,6 +22,7 @@ Built with: Nightmare.js + typo-js
 
 ## 🔸 Some Issues:
 + Not all words are added into the typo-js dictionary, however, the aim is to add more words to this library moving on.
++ You can only run one website. In the future, checktypo will allow you to search multiple pages better.
 
 ### 💡 Future-Ideas:
 + add custom argument cleaning using a config.json that includes
@@ -30,3 +31,4 @@ Built with: Nightmare.js + typo-js
     - Any additional abbreviations that are acceptable
     - Remove duplicates from result array
 + Spin up a static html in the browser that contains the typos highlighted in red, along with suggested fixes at the top (or on hover)
++ Use promises instead of callbacks to allow user to check typos for multiple websites at once.
