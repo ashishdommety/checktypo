@@ -2,16 +2,16 @@
 Search through your web content and find any overlooked typos!
 
 ## 🚀 Getting started
-`
+```
 npm install checktypo --save
-`
+```
 
 ## 🔍 How to use it:
 Using checktypo is super-simple.
 
-`
+```
 checktypo(*website url goes here*)
-`
+```
 
 where **checktypo** is the name of the variable assigned to the required package.
 
