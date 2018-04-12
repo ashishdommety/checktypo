@@ -10,14 +10,12 @@ npm install checktypo --save
 Using checktypo is super-simple.
 
 ```
-checktypo(*website url goes here*)
+checktypo("https://www.lookfortypos.com")
 ```
 
-where **checktypo** is the name of the variable assigned to the required package.
+**checktypo** is a function that accepts a string url of it's target website
 
-## ❓ What you can expect:
-
-Once you run the function above, checktypo returns an array of all the 'possible' typos on your page
+Once you run the function above, checktypo returns an array of all the 'possible' typos on your page. 
 
 ## 🔹 Dependencies
 Built with: Nightmare.js + typo-js
