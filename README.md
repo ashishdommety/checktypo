@@ -32,3 +32,8 @@ Built with: Nightmare.js + typo-js
     - Remove duplicates from result array
 + Spin up a static html in the browser that contains the typos highlighted in red, along with suggested fixes at the top (or on hover)
 + Use promises instead of callbacks to allow user to check typos for multiple websites at once.
+
+
+### 💻 Dev Ideas:
++ Include linting
++ Add `npm-run-all --parallel test lint` (to run both testing and linting pre-commit) 
