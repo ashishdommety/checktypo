@@ -9,20 +9,19 @@ Order of function calls
 */
 
 const cleanSymbols = require("./_cleanSymbols"),
-      cleanSpaces = require("./_cleanSpaces"),
-      spellCheck = require("./_spellCheck"),
-      cleanNumbers = require("./_cleanNumbers"),
-      cleanEmails = require("./_cleanEmails"),
-      cleanCustomArgs = require("./_cleanCustomArgs");
+  cleanSpaces = require("./_cleanSpaces"),
+  spellCheck = require("./_spellCheck"),
+  cleanNumbers = require("./_cleanNumbers"),
+  cleanEmails = require("./_cleanEmails"),
+  cleanCustomArgs = require("./_cleanCustomArgs");
 
-module.exports = function (contentArray){
-        let noSymbols = cleanSymbols(contentArray);
-        let noSpaces = cleanSpaces(noSymbols);
-        let noNums = cleanNumbers(noSpaces);
-        let noMails = cleanEmails(noNums);
-        let noTypos = spellCheck(noMails);
-        
-        // add conditional to clean custom args if prescribed, or just go ahead and filter.
-        
-        return noTypos;
-}
+module.exports = function(contentArray) {
+  let noSymbols = cleanSymbols(contentArray);
+  let noSpaces = cleanSpaces(noSymbols);
+  let noNums = cleanNumbers(noSpaces);
+  let noMails = cleanEmails(noNums);
+  let noTypos = spellCheck(noMails);
+  // add conditional to clean custom args if prescribed, or just go ahead and filter.
+
+  return noTypos;
+};

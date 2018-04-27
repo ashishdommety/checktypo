@@ -5,7 +5,9 @@
   "main": "main.js",
   "readme": "README.md",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "pretty": "prettier --write --tab-width 2 \"helpers/*.js\"",
+    "validate": "npm-run-all --parallel test pretty"
   },
   "repository": {
     "type": "git",
@@ -26,11 +28,13 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "husky": "^1.0.0-rc.2",
-    "mocha": "^5.0.5"
+    "mocha": "^5.0.5",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.12.1"
   },
   "husky": {
-    "hooks":{
-      "pre-commit": "npm test"
+    "hooks": {
+      "pre-commit": "npm validate"
     }
   }
 }
