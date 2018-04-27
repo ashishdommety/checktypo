@@ -20,7 +20,7 @@ describe("Check Spelling: ", function(){
       spellCheck(['hello']).should.deep.equal('typo free!');
     })
     it("Should check if array remains unaffected", function(){
-      spellCheck(['asdj']).should.deep.equal(['asdj']);
+      spellCheck(['asdj']).should.deep.equal(['asdjas']);
     })
 
 })
