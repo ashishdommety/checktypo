@@ -37,3 +37,4 @@ Built with: Nightmare.js + typo-js
 ### 💻 Dev Ideas:
 + Include linting
 + Add `npm-run-all --parallel test lint` (to run both testing and linting pre-commit) 
++ Add `prettier` to standardize JS.
