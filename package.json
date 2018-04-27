@@ -34,7 +34,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm validate"
+      "pre-commit": "npm run validate"
     }
   }
 }
