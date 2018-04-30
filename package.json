@@ -22,7 +22,6 @@
   "dependencies": {
     "clear": "^0.1.0",
     "cli-spinner": "^0.2.8",
-    "nightmare": "^3.0.0",
     "typo-js": "^1.0.3"
   },
   "devDependencies": {
