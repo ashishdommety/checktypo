@@ -18,7 +18,7 @@ checktypo("https://www.lookfortypos.com")
 Once you run the function above, checktypo returns an array of all the 'possible' typos on your page. 
 
 ## 🔹 Dependencies
-Built with: Nightmare.js + typo-js
+Built with: Cheerio + typo-js
 
 ## 🔸 Some Issues:
 + Not all words are added into the typo-js dictionary, however, the aim is to add more words to this library moving on.
@@ -30,10 +30,10 @@ Built with: Nightmare.js + typo-js
     - Additional words that aren't included in typo-js
     - Any additional abbreviations that are acceptable
     - Remove duplicates from result array
+    - Add ability to test multiple pages in one go
 + Spin up a static html in the browser that contains the typos highlighted in red, along with suggested fixes at the top (or on hover)
 + Use promises instead of callbacks to allow user to check typos for multiple websites at once.
 
 
 ### 💻 Dev Ideas:
-+ Include linting
-+ Add `npm-run-all --parallel test lint` (to run both testing and linting pre-commit) 
++ Include linting for personal sanity
