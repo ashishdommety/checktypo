@@ -9,6 +9,7 @@ const clear = require("clear");
 const checkTypo = require("./helpers/_index");
 
 module.exports = function findTypos(url){
+  // let startTime = new Date().getTime();
   spinner.start();
   nightmare
   .goto(url)
@@ -19,6 +20,8 @@ module.exports = function findTypos(url){
       console.log("\n");
       clear();
       console.log(checkTypo(result));
+      // let endTime = new Date().getTime();
+      // console.log("time taken : " + (endTime - startTime) / 1000 + " seconds");
   })
 }
 
