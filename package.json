@@ -6,7 +6,7 @@
   "readme": "README.md",
   "scripts": {
     "test": "mocha",
-    "pretty": "prettier --write --tab-width 2 \"helpers/*.js\"",
+    "pretty": "prettier --write --tab-width 4 \"helpers/*.js\"",
     "validate": "npm-run-all --parallel test pretty"
   },
   "repository": {
@@ -29,6 +29,8 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
     "husky": "^1.0.0-rc.2",
     "mocha": "^5.0.5",
     "npm-run-all": "^4.1.2",
