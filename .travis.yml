@@ -7,4 +7,11 @@ cache:
 
 script:
   - yarn test
-  
+  - npm version patch
+
+deploy: 
+  provider: npm
+  email: email
+  api_key: key
+  on:
+    branch: master
