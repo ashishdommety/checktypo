@@ -11,7 +11,7 @@ script:
 
 deploy: 
   provider: npm
-  email: email
-  api_key: key
+  email: $email
+  api_key: $key
   on:
     branch: master
