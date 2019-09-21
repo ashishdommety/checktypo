@@ -11,15 +11,18 @@ const request = require("request");
 module.exports = function findTypos(url) {
   spinner.start();
   request(url, function(err, response, html) {
-    if (!err) {
-      spinner.stop();
-      clear();
+    spinner.stop();
+    clear();
+    if (err) {
+      throw err;
+    } else {
       const $ = cheerio.load(html);
       let webContent = $("body")
         .text()
         .split(" ");
-      return checkTypo(webContent);
-      // console.log(checkTypo(webContent));
+      const typos = checkTypo(webContent);
+      console.log(`typos found: ${typos}`);
+      return typos;
     }
   });
 };

@@ -7,7 +7,8 @@
   "scripts": {
     "test": "mocha",
     "pretty": "prettier --write --tab-width 4 \"helpers/*.js\"",
-    "validate": "npm-run-all --parallel test pretty"
+    "validate": "npm-run-all --parallel test pretty",
+    "check": "nodemon checker.js"
   },
   "repository": {
     "type": "git",
